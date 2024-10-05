@@ -62,3 +62,5 @@ function populateHeroes(obj) {
     section.appendChild(myArticle);
   }
 }
+
+populate();
