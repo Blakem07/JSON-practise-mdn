@@ -16,6 +16,8 @@ function displayCatInfo(catString) {
   let male = 0;
 
   // Add your code here
+  let catObj = JSON.parse(catString);
+  motherInfo += `${catObj[0].name}, ${catObj[1].name}, ${catObj[2].name}`;
 
   // Don't edit the code below here!
 
