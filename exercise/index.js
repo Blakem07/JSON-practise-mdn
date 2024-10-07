@@ -19,12 +19,28 @@ function displayCatInfo(catString) {
   let catObj = JSON.parse(catString);
 
   // Adds the names of the mother cats
-  motherInfo += `${catObj[0].name}, ${catObj[1].name} and ${catObj[2].name}.`;
+  // motherInfo += `${catObj[0].name}, ${catObj[1].name} and ${catObj[2].name}.`;
 
   // Adds the total amount of kittens
 
   // Outer loop goes over each mother cat within the catObj
   for (let key in catObj) {
+    numbMotherCats = Object.keys(catObj).length;
+
+    // Constructs the motherInfo sentence
+    if (key != 0 && key != numbMotherCats - 1) {
+      motherInfo += ", ";
+    } else if (key == numbMotherCats - 1) {
+      motherInfo += " and ";
+    }
+
+    motherInfo += catObj[key].name;
+
+    if (key == numbMotherCats - 1) {
+      motherInfo += ".";
+    }
+
+    // Counts the amount of kittens
     // Inner loop goes over the properties of each mother cat
     for (let innerkey in catObj[key]) {
       // Isolates the kitten array
